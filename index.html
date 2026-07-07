@@ -424,25 +424,46 @@
             font-size: 13px;
         }
 
+        /* SEARCH CONTAINER - BIGGER & CENTERED */
         .search-container {
             background: var(--glass);
             backdrop-filter: blur(6px);
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 14px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
-            gap: 10px;
+            gap: 14px;
             align-items: center;
             width: 100%;
+            max-width: 500px;
+            margin: 0 auto 20px auto;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:focus-within {
+            border-color: var(--gold2);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
+        }
+
+        .search-container svg {
+            flex-shrink: 0;
+            opacity: 0.6;
         }
 
         .search-container input {
             background: transparent;
             border: 0;
             outline: 0;
-            color: inherit;
-            font-size: 16px;
+            color: #fff;
+            font-size: 17px;
             width: 100%;
+            padding: 4px 0;
+            font-weight: 400;
+        }
+
+        .search-container input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 300;
         }
 
         /* Tabs Navigation */
@@ -1100,8 +1121,10 @@
             }
 
             .search-container {
-                width: auto;
+                width: 100%;
+                max-width: 500px;
                 min-width: 300px;
+                margin: 0 auto 20px auto;
             }
 
             .tabs-container {
@@ -1238,50 +1261,45 @@ text-decoration:none;
         <main class="menu">
             <div class="menu-head">
                 <div class="controls">
-                    <div class="search" role="search">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                            <path d="M21 21l-4.35-4.35" stroke="rgba(255,255,255,0.6)" stroke-width="1.6"
+                    <!-- SEARCH CONTAINER - BIGGER & CENTERED (with working search) -->
+                    <div class="search-container" role="search">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+                            <path d="M21 21l-4.35-4.35" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round"></path>
-                            <circle cx="11" cy="11" r="6" stroke="rgba(255,255,255,0.6)" stroke-width="1.6"
+                            <circle cx="11" cy="11" r="6" stroke="rgba(255,255,255,0.7)" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round"></circle>
                         </svg>
-                        <!-- <input id="search" placeholder="Search dishes, ingredients..." /> -->
-                    </div> 
+                        <input id="search" placeholder="Search dishes, ingredients..." />
+                    </div>
 
 
 
    <div class="tabs-scroll">
 <button class="tab active" data-cat="all">🍽️ All Items</button>
 <button class="tab" data-cat="Beverage">🥤 Beverage</button>
-<button class="tab" data-cat="Tea & Coffee">☕ Tea & Coffee</button>
-<button class="tab" data-cat="Mocktail's & Shakes">🍹 Mocktail's & Shakes</button>
-<button class="tab" data-cat="Veg Soup">🥣 Veg Soup</button>
-<button class="tab" data-cat="Salad & Papad">🥗 Salad & Papad</button>
-<button class="tab" data-cat="Nonveg Soup">🍲 Nonveg Soup</button>
-<button class="tab" data-cat="Chinese Oriental Rice & Noodles">🍜 Chinese Oriental Rice & Noodles</button>
-<button class="tab" data-cat="Chinese Oriental Appetizer's">🥟 Chinese Oriental Appetizer's</button>
-<button class="tab" data-cat="Veg Starter's">🧆 Veg Starter's</button>
-<button class="tab" data-cat="Non-veg Appetizer's">🍗 Non-veg Appetizer's</button>
-<button class="tab" data-cat="Egg Item">🥚 Egg Item</button>
-<button class="tab" data-cat="Fish & Prawn's">🍤 Fish & Prawn's</button>
-<button class="tab" data-cat="Tandoori Starter's">🍢 Tandoori Starter's</button>
-<button class="tab" data-cat="Tandoori Nonveg Starter's">🍢 Tandoori Nonveg Starter's</button>
-<button class="tab" data-cat="Veg Main Course">🍛 Veg Main Course</button>
-<button class="tab" data-cat="Indian Breads & Daal">🫓 Indian Breads & Daal</button>
-<button class="tab" data-cat="Rice">🍚 Rice</button>
-<button class="tab" data-cat="Raita">🥣 Raita</button>
-<button class="tab" data-cat="Dessert's">🍨 Dessert's</button>
-<button class="tab" data-cat="Nonveg Main Course">🍖 Nonveg Main Course</button>
-<button class="tab" data-cat="Veg & Nonveg Biryani">🥘 Veg & Nonveg Biryani</button>
-<button class="tab" data-cat="Special Thali">🍱 Special Thali</button>
-<button class="tab" data-cat="Pizza">🍕 Pizza</button>
-<button class="tab" data-cat="Sandwich">🥪 Sandwich</button>
-<button class="tab" data-cat="Burger">🍔 Burger</button>
-<button class="tab" data-cat="Pasta">🍝 Pasta</button>
-<button class="tab" data-cat="Momo's">🥟 Momo's</button>
-<button class="tab" data-cat="Roll's">🌯 Roll's</button>
+<button class="tab" data-cat="Hot Tea & Coffee">☕ Hot Tea & Coffee</button>
 <button class="tab" data-cat="Mojito">🍸 Mojito</button>
+<button class="tab" data-cat="Mocktails">🍹 Mocktails</button>
 <button class="tab" data-cat="Shake">🧋 Shake</button>
+<button class="tab" data-cat="Veg Soup">🥣 Veg Soup</button>
+<button class="tab" data-cat="Non Veg Soup">🍲 Non Veg Soup</button>
+<button class="tab" data-cat="Salad & Papad">🥗 Salad & Papad</button>
+<button class="tab" data-cat="Chinese Oriental Rice & Noodles">🍜 Chinese Oriental Rice & Noodles</button>
+<button class="tab" data-cat="Chinese Oriental Appetizers">🥟 Chinese Oriental Appetizers</button>
+<button class="tab" data-cat="Veg Starter's">🧆 Veg Starter's</button>
+<button class="tab" data-cat="Non Veg Appetizers">🍗 Non Veg Appetizers</button>
+<button class="tab" data-cat="Tandoori Non Veg Starters">🍢 Tandoori Non Veg Starters</button>
+<button class="tab" data-cat="Tandoori Veg Starters">🍢 Tandoori Veg Starters</button>
+<button class="tab" data-cat="Egg Items">🥚 Egg Items</button>
+<button class="tab" data-cat="Prawns & Fish Items">🍤 Prawns & Fish Items</button>
+<button class="tab" data-cat="Non Veg Main Course">🍖 Non Veg Main Course</button>
+<button class="tab" data-cat="Veg Main Course">🍛 Veg Main Course</button>
+<button class="tab" data-cat="Veg & Non Veg Biryani">🥘 Veg & Non Veg Biryani</button>
+<button class="tab" data-cat="Dal & Rice">🍚 Dal & Rice</button>
+<button class="tab" data-cat="Indian Breads">🫓 Indian Breads</button>
+<button class="tab" data-cat="Raita">🥣 Raita</button>
+<button class="tab" data-cat="Desserts">🍨 Desserts</button>
+<button class="tab" data-cat="Thali">🍱 Thali</button>
    </div>  
                 </div>
             </div>
@@ -2042,10 +2060,24 @@ text-decoration:none;
                 });
             });
 
-            // Search functionality
-            document.getElementById('search').addEventListener('input', (e) => {
-                searchItems(e.target.value);
-            });
+            // Search functionality - WORKING NOW
+            const searchInput = document.getElementById('search');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.trim();
+                    if (query === '') {
+                        // If search is empty, show all items based on active tab
+                        const activeTab = document.querySelector('.tab.active');
+                        if (activeTab) {
+                            filterByCategory(activeTab.dataset.cat);
+                        } else {
+                            renderMenuItems(data);
+                        }
+                    } else {
+                        searchItems(query);
+                    }
+                });
+            }
 
             // Update details summary when form inputs change
             document.getElementById('tableNumber').addEventListener('input', updateCustomerDetailsSummary);
